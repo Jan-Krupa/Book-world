@@ -10,7 +10,6 @@
         text-align: center;
         line-height: 16vh;
         font-size: 5rem;
-        // background-color: #222;
         color: #64d9ce;
         text-shadow: 0 0 2px black;
     }
@@ -20,13 +19,9 @@
         display: flex;
         justify-content: space-between;
         margin: 4% 50px;
-        // border-top: 2px solid black;
-        // border-bottom: 2px solid black;
-        // background-color: #444;
     }
     &__bookList {
         flex-grow: 1;
-        // background-color: #666;
     }
     &__footer {
         flex-basis: 5vh;
@@ -40,4 +35,6 @@
 }
 
 @import 'navigation';
+@import 'bookList';
 @import 'button';
+@import 'book';

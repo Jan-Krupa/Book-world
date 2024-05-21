@@ -48,6 +48,17 @@
   color: white;
 }
 
+.bookList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .btn {
   padding: 10px 20px;
   font-size: 1rem;
@@ -68,4 +79,23 @@
   -webkit-box-shadow: 0 0 4px black;
           box-shadow: 0 0 4px black;
   cursor: pointer;
+}
+
+.book {
+  background-repeat: no-repeat;
+  width: 20%;
+  margin: 20px;
+}
+.book__cover {
+  margin: 0 auto;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 160px;
+  height: 230px;
+}
+.book__title {
+  text-align: center;
+  padding: 20px 0;
+  font-weight: bold;
 }/*# sourceMappingURL=app.css.map */
