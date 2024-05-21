@@ -1,0 +1,18 @@
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #64d9ce;
+    border: none;
+    box-shadow: 0 0 2px black;
+    margin: 0 20px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    &:hover {
+        color: #64d9ce;
+        background-color: white;
+        box-shadow: 0 0 4px black;
+        cursor: pointer;
+    }
+}

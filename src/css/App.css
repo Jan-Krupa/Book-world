@@ -1,0 +1,71 @@
+.app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 80vw;
+  margin: 0 auto;
+  min-height: 100vh;
+  background-color: white;
+}
+.app__title {
+  -ms-flex-preferred-size: 16vh;
+      flex-basis: 16vh;
+  text-align: center;
+  line-height: 16vh;
+  font-size: 5rem;
+  color: #64d9ce;
+  text-shadow: 0 0 2px black;
+}
+.app__nav {
+  -ms-flex-preferred-size: 8vh;
+      flex-basis: 8vh;
+  line-height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 4% 50px;
+}
+.app__bookList {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.app__footer {
+  -ms-flex-preferred-size: 5vh;
+      flex-basis: 5vh;
+  text-align: center;
+  line-height: 5vh;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #64d9ce;
+  color: white;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #64d9ce;
+  border: none;
+  -webkit-box-shadow: 0 0 2px black;
+          box-shadow: 0 0 2px black;
+  margin: 0 20px;
+  letter-spacing: 1px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.btn:hover {
+  color: #64d9ce;
+  background-color: white;
+  -webkit-box-shadow: 0 0 4px black;
+          box-shadow: 0 0 4px black;
+  cursor: pointer;
+}/*# sourceMappingURL=app.css.map */
