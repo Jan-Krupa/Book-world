@@ -1,0 +1,27 @@
+.book {
+    background-repeat: no-repeat;
+    width: 24%;
+    padding: 20px;
+    position: relative;
+    & button {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        font-size: 2rem;
+        color: #64d9ce;
+        border: none;
+    }
+    &__cover {
+        margin: 0 auto;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 160px;
+        height: 230px;
+    }
+    &__title {
+        text-align: center;
+        padding: 20px 0;
+        font-weight: bold;
+    }
+}
