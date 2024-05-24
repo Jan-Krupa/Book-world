@@ -1,8 +1,19 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as fasFaHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Book = (props) => {
+    const navigate = useNavigate();
+
+    const goToBookDetails = (book) => {
+        navigate(`/book`, {
+            state: {
+                bookData: book,
+                ready: 'yes',
+            },
+        });
+    };
     return (
         <div className="book">
             <button
@@ -23,9 +34,14 @@ const Book = (props) => {
                 }}
             ></div>
             <p className="book__title">
-                {props.book.title.length > 40
-                    ? props.book.title.slice(0, 40) + ' ...'
-                    : props.book.title}
+                <NavLink
+                    to="/book"
+                    onClick={() => props.currentBook(props.book)}
+                >
+                    {props.book.title.length > 40
+                        ? props.book.title.slice(0, 40) + ' ...'
+                        : props.book.title}
+                </NavLink>
             </p>
         </div>
     );

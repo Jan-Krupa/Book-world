@@ -1,8 +1,10 @@
 import '../css/App.css';
 import BookList from './BookList';
 import Navigation from './Navigation';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import React, { Component } from 'react';
+import BookDetails from './BookDetails';
 
 const API = 'https://gutendex.com/books';
 
@@ -11,6 +13,7 @@ class App extends Component {
         books: [],
         onlyFavorite: false,
         favoriteBooks: [],
+        currentBook: {},
     };
 
     componentDidMount() {
@@ -28,7 +31,6 @@ class App extends Component {
                 this.setState({
                     books: newData,
                 });
-                console.log(newData);
             })
             .catch((error) => console.log(error + 'coś nie tak'));
     }
@@ -47,35 +49,76 @@ class App extends Component {
     showAllBooks = () => {
         this.setState({
             onlyFavorite: false,
+            currentBook: {},
         });
     };
 
     showOnlyFavorite = () => {
         this.setState({
             onlyFavorite: true,
+            currentBook: {},
+        });
+    };
+
+    currentBook = (book) => {
+        console.log(book);
+        this.setState({
+            currentBook: book,
         });
     };
 
     render() {
         return (
-            <div className="app">
-                <h1 className="app__title">Book World</h1>
-                <div className="app__nav">
-                    <Navigation
-                        showAllBooks={this.showAllBooks}
-                        showOnlyFavorite={this.showOnlyFavorite}
-                    />
+            <BrowserRouter>
+                <div className="app">
+                    <h1 className="app__title">Book World</h1>
+                    <div className="navWrapper">
+                        <div className="app__nav">
+                            <Navigation
+                                showAllBooks={this.showAllBooks}
+                                showOnlyFavorite={this.showOnlyFavorite}
+                                onlyFavorite={this.state.onlyFavorite}
+                            />
+                        </div>
+                    </div>
+                    <div className="app__bookList">
+                        <Routes>
+                            <Route
+                                path="/"
+                                exact
+                                element={
+                                    <BookList
+                                        books={this.state.books}
+                                        handleFavorite={this.handleFavorite}
+                                        onlyFavorite={this.state.onlyFavorite}
+                                        currentBook={this.currentBook}
+                                    />
+                                }
+                            />
+                            <Route
+                                path="/favBooks"
+                                element={
+                                    <BookList
+                                        books={this.state.favoriteBooks}
+                                        handleFavorite={this.handleFavorite}
+                                        currentBook={this.currentBook}
+                                        onlyFavorite={this.state.onlyFavorite}
+                                    />
+                                }
+                            />
+                            <Route
+                                path="/book"
+                                element={
+                                    <BookDetails
+                                        book={this.state.currentBook}
+                                    />
+                                }
+                            />
+                        </Routes>
+                    </div>
+                    <footer className="app__footer">© Jan Krupa 2024</footer>
                 </div>
-                <div className="app__bookList">
-                    <BookList
-                        books={this.state.books}
-                        handleFavorite={this.handleFavorite}
-                        favoriteBooks={this.state.favoriteBooks}
-                        onlyFavorite={this.state.onlyFavorite}
-                    />
-                </div>
-                <footer className="app__footer">© Jan Krupa 2024</footer>
-            </div>
+            </BrowserRouter>
         );
     }
 }

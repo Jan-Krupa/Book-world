@@ -1,6 +1,6 @@
 .book {
     background-repeat: no-repeat;
-    width: 24%;
+    width: 25%;
     padding: 20px;
     position: relative;
     & button {
@@ -10,6 +10,7 @@
         font-size: 2rem;
         color: #64d9ce;
         border: none;
+        background-color: transparent;
     }
     &__cover {
         margin: 0 auto;

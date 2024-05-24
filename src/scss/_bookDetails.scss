@@ -1,0 +1,44 @@
+.bookDetails {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px 100px;
+    &__img {
+        width: 200px;
+        height: 300px;
+        padding: 10px 100px;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 50%;
+        padding: 20px 50px;
+        &--title {
+            font-size: 1.5rem;
+        }
+        &--author,
+        &__languages,
+        &--bookshelves {
+            font-size: 1.1rem;
+        }
+    }
+    &__details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 50px;
+        &--title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            width: 100%;
+            letter-spacing: 1px;
+            color: #64d9ce;
+            text-shadow: 0 0 1px black;
+        }
+        &--bookshelves,
+        &--subjects {
+            padding-top: 50px;
+        }
+    }
+}

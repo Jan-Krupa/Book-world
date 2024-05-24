@@ -1,3 +1,13 @@
+.navWrapper {
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    top: 16vh;
+    left: 0;
+    padding-bottom: 20px;
+    z-index: 5;
+}
+
 .app {
     display: flex;
     flex-direction: column;
@@ -5,25 +15,40 @@
     margin: 0 auto;
     min-height: 100vh;
     background-color: white;
+    overflow-x: hidden;
     &__title {
+        position: fixed;
+        top: 0;
+        left: 0;
         flex-basis: 16vh;
         text-align: center;
         line-height: 16vh;
         font-size: 5rem;
         color: #64d9ce;
         text-shadow: 0 0 2px black;
+        background-color: #fff;
+        width: 100%;
+        z-index: 5;
     }
     &__nav {
         flex-basis: 8vh;
         line-height: 8vh;
         display: flex;
         justify-content: space-between;
-        margin: 4% 50px;
+        background-color: white;
+        width: 80%;
+        margin: 0 auto;
     }
     &__bookList {
         flex-grow: 1;
+        margin-top: 24vh;
+        padding: 50px 0;
     }
     &__footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
         flex-basis: 5vh;
         text-align: center;
         line-height: 5vh;
@@ -38,3 +63,4 @@
 @import 'bookList';
 @import 'button';
 @import 'book';
+@import 'bookDetails';
