@@ -7,7 +7,7 @@ import Modal from './Modal';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React, { Component } from 'react';
 
-const API = `https://gutendex.com/books`;
+const API = `https://gutendex.com/books?page=1`;
 
 class App extends Component {
     state = {
@@ -20,6 +20,9 @@ class App extends Component {
         language: 'en',
         copyright: false,
         modalOpen: false,
+        isLoaded: false,
+        page: 1,
+        isNextPage: true,
     };
 
     booksCome = (api) => {
@@ -33,8 +36,11 @@ class App extends Component {
                             favorite: false,
                         })
                 );
+                const nextPage = data.next ? true : false;
                 this.setState({
                     books: newData,
+                    isLoaded: true,
+                    isNextPage: nextPage,
                 });
             })
             .catch((error) => console.log(error + 'coś nie tak'));
@@ -59,6 +65,10 @@ class App extends Component {
         this.setState({
             onlyFavorite: false,
             currentBook: {},
+            title: '',
+            author: '',
+            language: 'en',
+            copyright: false,
         });
     };
 
@@ -70,7 +80,6 @@ class App extends Component {
     };
 
     currentBook = (book) => {
-        console.log(book);
         this.setState({
             currentBook: book,
         });
@@ -91,6 +100,11 @@ class App extends Component {
     submitFilters = (e) => {
         e.preventDefault();
         const filterApi = `https://gutendex.com/books?languages=${this.state.language}&search=${this.state.author}%20${this.state.title}&copyright=${this.state.copyright}`;
+        this.setState({
+            books: [],
+            page: 1,
+            isLoaded: false,
+        });
         this.booksCome(filterApi);
     };
 
@@ -104,6 +118,30 @@ class App extends Component {
         this.setState({
             modalOpen: false,
         });
+    };
+
+    nextPage = () => {
+        const api = `https://gutendex.com/books?page=${this.state.page + 1}`;
+        this.setState({
+            books: [],
+            isLoaded: false,
+            page: this.state.page + 1,
+        });
+        this.booksCome(api);
+    };
+
+    previousPage = () => {
+        if (this.state.page > 1) {
+            const api = `https://gutendex.com/books?page=${
+                this.state.page - 1
+            }`;
+            this.setState({
+                books: [],
+                idLoaded: false,
+                page: this.state.page + 1,
+            });
+            this.booksCome(api);
+        }
     };
 
     render() {
@@ -132,6 +170,11 @@ class App extends Component {
                                         handleFavorite={this.handleFavorite}
                                         onlyFavorite={this.state.onlyFavorite}
                                         currentBook={this.currentBook}
+                                        isLoaded={this.state.isLoaded}
+                                        page={this.state.page}
+                                        nextPage={this.nextPage}
+                                        previousPage={this.previousPage}
+                                        isNextPage={this.state.isNextPage}
                                     />
                                 }
                             />
@@ -143,6 +186,9 @@ class App extends Component {
                                         handleFavorite={this.handleFavorite}
                                         currentBook={this.currentBook}
                                         onlyFavorite={this.state.onlyFavorite}
+                                        isLoaded={this.state.isLoaded}
+                                        nextPage={this.nextPage}
+                                        previousPage={this.previousPage}
                                     />
                                 }
                             />

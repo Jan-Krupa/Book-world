@@ -1,4 +1,38 @@
 .bookList {
     display: flex;
     flex-wrap: wrap;
+    &__loading {
+        padding: 20px;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #64d9ce;
+    }
+    &__nav {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        width: 100%;
+        &--button {
+            font-size: 1.5rem;
+            padding: 4px 10px;
+            background-color: none;
+            color: #64d9ce;
+            border: none;
+            box-shadow: 0 0 3px black;
+            &:hover {
+                background-color: #64d9ce;
+                color: white;
+                cursor: pointer;
+            }
+        }
+        &--display {
+            text-align: center;
+            line-height: 40px;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            padding: 0 50px;
+            font-weight: bold;
+        }
+    }
 }

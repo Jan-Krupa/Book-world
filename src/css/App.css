@@ -80,6 +80,45 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+.bookList__loading {
+  padding: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #64d9ce;
+}
+.bookList__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.bookList__nav--button {
+  font-size: 1.5rem;
+  padding: 4px 10px;
+  background-color: none;
+  color: #64d9ce;
+  border: none;
+  -webkit-box-shadow: 0 0 3px black;
+          box-shadow: 0 0 3px black;
+}
+.bookList__nav--button:hover {
+  background-color: #64d9ce;
+  color: white;
+  cursor: pointer;
+}
+.bookList__nav--display {
+  text-align: center;
+  line-height: 40px;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  padding: 0 50px;
+  font-weight: bold;
+}
 
 .btn {
   padding: 10px 20px;
