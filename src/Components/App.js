@@ -65,10 +65,6 @@ class App extends Component {
         this.setState({
             onlyFavorite: false,
             currentBook: {},
-            title: '',
-            author: '',
-            language: 'en',
-            copyright: false,
         });
     };
 
@@ -146,7 +142,7 @@ class App extends Component {
 
     render() {
         return (
-            <BrowserRouter>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <div className="app">
                     <h1 className="app__title">Book World</h1>
                     <div className="navWrapper">

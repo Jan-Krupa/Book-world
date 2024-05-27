@@ -81,10 +81,18 @@
       flex-wrap: wrap;
 }
 .bookList__loading {
+  position: relative;
   padding: 20px;
   font-size: 2rem;
   font-weight: bold;
   color: #64d9ce;
+}
+.bookList__loading span {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  -webkit-animation: dots 1s linear infinite;
+          animation: dots 1s linear infinite;
 }
 .bookList__nav {
   display: -webkit-box;
@@ -99,7 +107,7 @@
 .bookList__nav--button {
   font-size: 1.5rem;
   padding: 4px 10px;
-  background-color: none;
+  background-color: white;
   color: #64d9ce;
   border: none;
   -webkit-box-shadow: 0 0 3px black;
@@ -120,6 +128,59 @@
   font-weight: bold;
 }
 
+@-webkit-keyframes dots {
+  0% {
+    bottom: 20px;
+    right: 0;
+  }
+  30% {
+    bottom: 20px;
+    right: 0;
+  }
+  32% {
+    bottom: 20px;
+    right: -5px;
+  }
+  62% {
+    bottom: 20px;
+    right: -5px;
+  }
+  64% {
+    bottom: 20px;
+    right: -10px;
+  }
+  100% {
+    bottom: 20px;
+    right: -10px;
+  }
+}
+
+@keyframes dots {
+  0% {
+    bottom: 20px;
+    right: 0;
+  }
+  30% {
+    bottom: 20px;
+    right: 0;
+  }
+  32% {
+    bottom: 20px;
+    right: -5px;
+  }
+  62% {
+    bottom: 20px;
+    right: -5px;
+  }
+  64% {
+    bottom: 20px;
+    right: -10px;
+  }
+  100% {
+    bottom: 20px;
+    right: -10px;
+  }
+}
 .btn {
   padding: 10px 20px;
   font-size: 1rem;
@@ -289,6 +350,7 @@
 }
 .modal__dialog--box .dialog__input {
   width: 90%;
+  padding: 5px;
 }
 .modal__dialog--btn {
   margin-top: 100px;

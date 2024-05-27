@@ -19,7 +19,9 @@ const BookList = (props) => {
             {props.isLoaded ? (
                 lists
             ) : (
-                <p className="bookList__loading">Loading books ...</p>
+                <p className="bookList__loading">
+                    Loading books <span>.</span>
+                </p>
             )}
             {props.isLoaded && !props.onlyFavorite && props.isNextPage ? (
                 <div className="bookList__nav">
