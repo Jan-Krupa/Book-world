@@ -1,12 +1,13 @@
 import '../css/App.css';
 import BookList from './BookList';
 import Navigation from './Navigation';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-import React, { Component } from 'react';
 import BookDetails from './BookDetails';
+import Modal from './Modal';
 
-const API = 'https://gutendex.com/books';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import React, { Component } from 'react';
+
+const API = `https://gutendex.com/books`;
 
 class App extends Component {
     state = {
@@ -14,10 +15,15 @@ class App extends Component {
         onlyFavorite: false,
         favoriteBooks: [],
         currentBook: {},
+        title: '',
+        author: '',
+        language: 'en',
+        copyright: false,
+        modalOpen: false,
     };
 
-    componentDidMount() {
-        fetch(API)
+    booksCome = (api) => {
+        fetch(api)
             .then((response) => response.json())
             .then((data) => {
                 const newData = data.results.map(
@@ -27,12 +33,15 @@ class App extends Component {
                             favorite: false,
                         })
                 );
-
                 this.setState({
                     books: newData,
                 });
             })
             .catch((error) => console.log(error + 'coś nie tak'));
+    };
+
+    componentDidMount() {
+        this.booksCome(API);
     }
 
     handleFavorite = (id) => {
@@ -67,6 +76,36 @@ class App extends Component {
         });
     };
 
+    changeFilters = (e) => {
+        if (e.target.type === 'checkbox') {
+            this.setState({
+                [e.target.name]: e.target.checked,
+            });
+        } else {
+            this.setState({
+                [e.target.name]: e.target.value,
+            });
+        }
+    };
+
+    submitFilters = (e) => {
+        e.preventDefault();
+        const filterApi = `https://gutendex.com/books?languages=${this.state.language}&search=${this.state.author}%20${this.state.title}&copyright=${this.state.copyright}`;
+        this.booksCome(filterApi);
+    };
+
+    openModal = () => {
+        this.setState({
+            modalOpen: true,
+        });
+    };
+
+    closeModal = () => {
+        this.setState({
+            modalOpen: false,
+        });
+    };
+
     render() {
         return (
             <BrowserRouter>
@@ -78,6 +117,7 @@ class App extends Component {
                                 showAllBooks={this.showAllBooks}
                                 showOnlyFavorite={this.showOnlyFavorite}
                                 onlyFavorite={this.state.onlyFavorite}
+                                openModal={this.openModal}
                             />
                         </div>
                     </div>
@@ -115,6 +155,13 @@ class App extends Component {
                                 }
                             />
                         </Routes>
+                        <Modal
+                            state={this.state}
+                            change={this.changeFilters}
+                            submitFilters={this.submitFilters}
+                            modalOpenState={this.state.modalOpen}
+                            closeModal={this.closeModal}
+                        />
                     </div>
                     <footer className="app__footer">© Jan Krupa 2024</footer>
                 </div>

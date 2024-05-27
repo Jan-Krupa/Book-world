@@ -1,19 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as fasFaHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Book = (props) => {
-    const navigate = useNavigate();
-
-    const goToBookDetails = (book) => {
-        navigate(`/book`, {
-            state: {
-                bookData: book,
-                ready: 'yes',
-            },
-        });
-    };
     return (
         <div className="book">
             <button

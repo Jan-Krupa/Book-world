@@ -163,7 +163,7 @@
 .bookDetails__info--title {
   font-size: 1.5rem;
 }
-.bookDetails__info--author, .bookDetails__info__languages, .bookDetails__info--bookshelves {
+.bookDetails__info--author, .bookDetails__info--languages, .bookDetails__info--bookshelves {
   font-size: 1.1rem;
 }
 .bookDetails__details {
@@ -187,4 +187,70 @@
 }
 .bookDetails__details--bookshelves, .bookDetails__details--subjects {
   padding-top: 50px;
+}
+
+.modalWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 99;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 60%;
+  background-color: white;
+  -webkit-box-shadow: 0 0 5px black;
+          box-shadow: 0 0 5px black;
+  z-index: 100;
+  padding: 10px 10px 40px 10px;
+}
+.modal svg {
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  font-size: 3rem;
+  color: #64d9ce;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.modal svg:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  cursor: pointer;
+}
+.modal__title {
+  color: #64d9ce;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.modal__dialog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 50px;
+}
+.modal__dialog--box {
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+  font-size: 1.4rem;
+  padding: 10px;
+}
+.modal__dialog--box .dialog__input {
+  width: 90%;
+}
+.modal__dialog--btn {
+  margin-top: 100px;
 }/*# sourceMappingURL=app.css.map */

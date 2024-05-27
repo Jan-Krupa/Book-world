@@ -28,7 +28,7 @@ const Navigation = (props) => {
                 </NavLink>
             </div>
             <div className="nav__btnWrap">
-                <Button txt="Filters" />
+                <Button txt="Filters" click={props.openModal} />
             </div>
         </>
     );

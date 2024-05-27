@@ -30,18 +30,18 @@ const BookDetails = (props) => {
             </div>
             <div className="bookDetails__details">
                 <p className="bookDetails__details--title">Book details:</p>
-                <p className="bookDetails__details--bookshelves">
+                <ul className="bookDetails__details--bookshelves">
                     <strong>Bookshelves:</strong>
                     {bookshelves.map((item) => (
-                        <p>- {item}</p>
+                        <li key={item}>{item}</li>
                     ))}
-                </p>
-                <p className="bookDetails__details--subjects">
+                </ul>
+                <ul className="bookDetails__details--subjects">
                     <strong>Subjects:</strong>
                     {subjects.map((item) => (
-                        <p>- {item}</p>
+                        <li key={item}>{item}</li>
                     ))}
-                </p>
+                </ul>
             </div>
         </div>
     );
