@@ -133,8 +133,8 @@ class App extends Component {
             }`;
             this.setState({
                 books: [],
-                idLoaded: false,
-                page: this.state.page + 1,
+                isLoaded: false,
+                page: this.state.page - 1,
             });
             this.booksCome(api);
         }
