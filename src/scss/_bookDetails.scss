@@ -3,10 +3,33 @@
     flex-wrap: wrap;
     width: 100%;
     padding: 10px 100px;
+    @media (max-width: 730px) and (orientation: portrait) {
+        padding: 10px 30px;
+        justify-content: center;
+    }
+    @media (max-width: 534px) and (orientation: landscape) {
+        padding: 10px 30px;
+    }
     &__img {
         width: 200px;
         height: 300px;
         padding: 10px 100px;
+        background-size: cover;
+        @media (max-width: 730px) and (orientation: portrait) {
+            width: 200px;
+            height: 300px;
+            padding: 10px 0;
+        }
+        @media (max-width: 500px) and (orientation: portrait) {
+            width: 100px;
+            height: 150px;
+            padding: 10px 0;
+        }
+        @media (max-width: 916px) and (orientation: landscape) {
+            width: 150px;
+            height: 200px;
+            padding: 10px 0;
+        }
     }
     &__info {
         display: flex;
@@ -21,6 +44,21 @@
         &--languages,
         &--bookshelves {
             font-size: 1.1rem;
+        }
+        & a {
+            @media (max-width: 500px) and (orientation: portrait) {
+                padding-top: 30px;
+            }
+        }
+        @media (max-width: 730px) and (orientation: portrait) {
+            width: 60%;
+            padding: 0;
+            padding-left: 20px;
+        }
+        @media (max-width: 534px) and (orientation: landscape) {
+            width: 50%;
+            padding: 0;
+            padding-left: 20px;
         }
     }
     &__details {
@@ -39,6 +77,9 @@
         &--bookshelves,
         &--subjects {
             padding-top: 50px;
+            @media (max-width: 500px) and (orientation: portrait) {
+                padding-top: 20px;
+            }
         }
     }
 }

@@ -9,6 +9,16 @@
     margin: 0 20px;
     letter-spacing: 1px;
     transition: 0.3s;
+    @media (max-width: 500px) and (orientation: portrait) {
+        margin: 0;
+    }
+    @media (max-width: 360px) and (orientation: portrait) {
+        padding: 10px;
+    }
+
+    @media (max-width: 845px) and (orientation: landscape) {
+        margin: 0;
+    }
     &:hover {
         color: #64d9ce;
         background-color: white;

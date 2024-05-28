@@ -6,12 +6,19 @@
     left: 0;
     padding-bottom: 20px;
     z-index: 5;
+    @media (max-width: 933px) and (orientation: landscape) {
+        width: 50%;
+        height: 16vh;
+        top: 0;
+        left: 50%;
+        padding-bottom: 0;
+    }
 }
 
 .app {
     display: flex;
     flex-direction: column;
-    width: 80vw;
+    max-width: 1200px;
     margin: 0 auto;
     min-height: 100vh;
     background-color: white;
@@ -29,6 +36,9 @@
         background-color: #fff;
         width: 100%;
         z-index: 5;
+        @media (max-width: 933px) and (orientation: landscape) {
+            width: 50%;
+        }
     }
     &__nav {
         flex-basis: 8vh;
@@ -38,11 +48,20 @@
         background-color: white;
         width: 80%;
         margin: 0 auto;
+        @media (max-width: 933px) and (orientation: landscape) {
+            width: 100%;
+            justify-content: flex-end;
+            line-height: 16vh;
+        }
     }
     &__bookList {
         flex-grow: 1;
         margin-top: 24vh;
         padding: 50px 0;
+        @media (max-width: 933px) and (orientation: landscape) {
+            margin-top: 16vh;
+            padding: 20px 0;
+        }
     }
     &__footer {
         position: fixed;

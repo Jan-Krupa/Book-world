@@ -7,6 +7,15 @@
   padding-bottom: 20px;
   z-index: 5;
 }
+@media (max-width: 933px) and (orientation: landscape) {
+  .navWrapper {
+    width: 50%;
+    height: 16vh;
+    top: 0;
+    left: 50%;
+    padding-bottom: 0;
+  }
+}
 
 .app {
   display: -webkit-box;
@@ -16,7 +25,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 80vw;
+  max-width: 1200px;
   margin: 0 auto;
   min-height: 100vh;
   background-color: white;
@@ -37,6 +46,11 @@
   width: 100%;
   z-index: 5;
 }
+@media (max-width: 933px) and (orientation: landscape) {
+  .app__title {
+    width: 50%;
+  }
+}
 .app__nav {
   -ms-flex-preferred-size: 8vh;
       flex-basis: 8vh;
@@ -51,12 +65,27 @@
   width: 80%;
   margin: 0 auto;
 }
+@media (max-width: 933px) and (orientation: landscape) {
+  .app__nav {
+    width: 100%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    line-height: 16vh;
+  }
+}
 .app__bookList {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   margin-top: 24vh;
   padding: 50px 0;
+}
+@media (max-width: 933px) and (orientation: landscape) {
+  .app__bookList {
+    margin-top: 16vh;
+    padding: 20px 0;
+  }
 }
 .app__footer {
   position: fixed;
@@ -73,12 +102,26 @@
   color: white;
 }
 
+@media (max-width: 845px) and (orientation: landscape) {
+  .nav__btnWrap {
+    margin-right: 30px;
+  }
+}
+@media (max-width: 534px) and (orientation: landscape) {
+  .nav__btnWrap {
+    margin-right: 10px;
+  }
+}
+
 .bookList {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .bookList__loading {
   position: relative;
@@ -195,6 +238,21 @@
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
+@media (max-width: 500px) and (orientation: portrait) {
+  .btn {
+    margin: 0;
+  }
+}
+@media (max-width: 360px) and (orientation: portrait) {
+  .btn {
+    padding: 10px;
+  }
+}
+@media (max-width: 845px) and (orientation: landscape) {
+  .btn {
+    margin: 0;
+  }
+}
 .btn:hover {
   color: #64d9ce;
   background-color: white;
@@ -209,6 +267,16 @@
   padding: 20px;
   position: relative;
 }
+@media (max-width: 960px) and (orientation: portrait) {
+  .book {
+    width: 30%;
+  }
+}
+@media (max-width: 800px) and (orientation: portrait) {
+  .book {
+    width: 40%;
+  }
+}
 .book button {
   position: absolute;
   top: 0;
@@ -218,6 +286,11 @@
   border: none;
   background-color: transparent;
 }
+@media (max-width: 500px) and (orientation: portrait) {
+  .book button {
+    right: -8px;
+  }
+}
 .book__cover {
   margin: 0 auto;
   background-size: contain;
@@ -225,6 +298,30 @@
   background-repeat: no-repeat;
   width: 160px;
   height: 230px;
+}
+@media (max-width: 500px) and (orientation: portrait) {
+  .book__cover {
+    width: 130px;
+    height: 180px;
+  }
+}
+@media (max-width: 360px) and (orientation: portrait) {
+  .book__cover {
+    width: 100px;
+    height: 140px;
+  }
+}
+@media (max-width: 845px) and (orientation: landscape) {
+  .book__cover {
+    width: 95px;
+    height: 125px;
+  }
+}
+@media (max-width: 845px) and (orientation: landscape) {
+  .book__cover {
+    width: 90px;
+    height: 120px;
+  }
 }
 .book__title {
   text-align: center;
@@ -241,10 +338,45 @@
   width: 100%;
   padding: 10px 100px;
 }
+@media (max-width: 730px) and (orientation: portrait) {
+  .bookDetails {
+    padding: 10px 30px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+@media (max-width: 534px) and (orientation: landscape) {
+  .bookDetails {
+    padding: 10px 30px;
+  }
+}
 .bookDetails__img {
   width: 200px;
   height: 300px;
   padding: 10px 100px;
+  background-size: cover;
+}
+@media (max-width: 730px) and (orientation: portrait) {
+  .bookDetails__img {
+    width: 200px;
+    height: 300px;
+    padding: 10px 0;
+  }
+}
+@media (max-width: 500px) and (orientation: portrait) {
+  .bookDetails__img {
+    width: 100px;
+    height: 150px;
+    padding: 10px 0;
+  }
+}
+@media (max-width: 916px) and (orientation: landscape) {
+  .bookDetails__img {
+    width: 150px;
+    height: 200px;
+    padding: 10px 0;
+  }
 }
 .bookDetails__info {
   display: -webkit-box;
@@ -265,6 +397,25 @@
 }
 .bookDetails__info--author, .bookDetails__info--languages, .bookDetails__info--bookshelves {
   font-size: 1.1rem;
+}
+@media (max-width: 500px) and (orientation: portrait) {
+  .bookDetails__info a {
+    padding-top: 30px;
+  }
+}
+@media (max-width: 730px) and (orientation: portrait) {
+  .bookDetails__info {
+    width: 60%;
+    padding: 0;
+    padding-left: 20px;
+  }
+}
+@media (max-width: 534px) and (orientation: landscape) {
+  .bookDetails__info {
+    width: 50%;
+    padding: 0;
+    padding-left: 20px;
+  }
 }
 .bookDetails__details {
   display: -webkit-box;
@@ -287,6 +438,11 @@
 }
 .bookDetails__details--bookshelves, .bookDetails__details--subjects {
   padding-top: 50px;
+}
+@media (max-width: 500px) and (orientation: portrait) {
+  .bookDetails__details--bookshelves, .bookDetails__details--subjects {
+    padding-top: 20px;
+  }
 }
 
 .modalWrapper {
@@ -311,6 +467,17 @@
           box-shadow: 0 0 5px black;
   z-index: 100;
   padding: 10px 10px 40px 10px;
+}
+@media (max-width: 500px) and (orientation: portrait) {
+  .modal {
+    width: 80%;
+  }
+}
+@media (max-width: 933px) and (orientation: landscape) {
+  .modal {
+    width: 80%;
+    max-height: 95%;
+  }
 }
 .modal svg {
   position: absolute;
@@ -342,16 +509,38 @@
       justify-content: space-around;
   margin-top: 50px;
 }
+@media (max-width: 933px) and (orientation: landscape) {
+  .modal__dialog {
+    margin-top: 25px;
+  }
+}
 .modal__dialog--box {
   -ms-flex-preferred-size: 40%;
       flex-basis: 40%;
   font-size: 1.4rem;
   padding: 10px;
 }
+@media (max-width: 800px) and (orientation: portrait) {
+  .modal__dialog--box {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
 .modal__dialog--box .dialog__input {
-  width: 90%;
+  width: 100%;
   padding: 5px;
 }
 .modal__dialog--btn {
-  margin-top: 100px;
+  margin: 100px auto 0 auto;
+  width: 80%;
+}
+@media (max-width: 500px) and (orientation: portrait) {
+  .modal__dialog--btn {
+    margin-top: 50px;
+  }
+}
+@media (max-width: 933px) and (orientation: landscape) {
+  .modal__dialog--btn {
+    margin-top: 40px;
+  }
 }/*# sourceMappingURL=app.css.map */

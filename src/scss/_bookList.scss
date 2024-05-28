@@ -1,6 +1,7 @@
 .bookList {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     &__loading {
         position: relative;
         padding: 20px;

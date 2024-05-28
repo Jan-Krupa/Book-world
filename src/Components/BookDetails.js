@@ -11,7 +11,7 @@ const BookDetails = (props) => {
             <div
                 className="bookDetails__img"
                 style={{
-                    background: 'url(' + formats['image/jpeg'] + ')',
+                    backgroundImage: 'url(' + formats['image/jpeg'] + ')',
                 }}
             ></div>
             <div className="bookDetails__info">

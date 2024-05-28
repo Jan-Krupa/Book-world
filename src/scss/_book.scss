@@ -3,6 +3,12 @@
     width: 25%;
     padding: 20px;
     position: relative;
+    @media (max-width: 960px) and (orientation: portrait) {
+        width: 30%;
+    }
+    @media (max-width: 800px) and (orientation: portrait) {
+        width: 40%;
+    }
     & button {
         position: absolute;
         top: 0;
@@ -11,6 +17,9 @@
         color: #64d9ce;
         border: none;
         background-color: transparent;
+        @media (max-width: 500px) and (orientation: portrait) {
+            right: -8px;
+        }
     }
     &__cover {
         margin: 0 auto;
@@ -19,6 +28,22 @@
         background-repeat: no-repeat;
         width: 160px;
         height: 230px;
+        @media (max-width: 500px) and (orientation: portrait) {
+            width: 130px;
+            height: 180px;
+        }
+        @media (max-width: 360px) and (orientation: portrait) {
+            width: 100px;
+            height: 140px;
+        }
+        @media (max-width: 845px) and (orientation: landscape) {
+            width: 95px;
+            height: 125px;
+        }
+        @media (max-width: 845px) and (orientation: landscape) {
+            width: 90px;
+            height: 120px;
+        }
     }
     &__title {
         text-align: center;

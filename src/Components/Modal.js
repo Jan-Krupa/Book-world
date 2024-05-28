@@ -66,7 +66,7 @@ const Modal = (props) => {
                     <div className="modal__dialog--btn">
                         <Button
                             click={props.closeModal}
-                            style={{ width: '500px' }}
+                            style={{ width: '100%', margin: 0 }}
                             txt="apply"
                         />
                     </div>

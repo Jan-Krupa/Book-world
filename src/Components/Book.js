@@ -20,7 +20,8 @@ const Book = (props) => {
             <div
                 className="book__cover"
                 style={{
-                    background: 'url(' + props.book.formats['image/jpeg'] + ')',
+                    backgroundImage:
+                        'url(' + props.book.formats['image/jpeg'] + ')',
                 }}
             ></div>
             <p className="book__title">

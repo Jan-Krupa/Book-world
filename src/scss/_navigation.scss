@@ -1,1 +1,8 @@
-
+.nav__btnWrap {
+    @media (max-width: 845px) and (orientation: landscape) {
+        margin-right: 30px;
+    }
+    @media (max-width: 534px) and (orientation: landscape) {
+        margin-right: 10px;
+    }
+}
